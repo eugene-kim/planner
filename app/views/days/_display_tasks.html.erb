@@ -1,0 +1,11 @@
+<li id="<%= date_tense %>">
+	<h2><%= format_date(daily_list.date) %></h2>
+	<ul>
+		<% daily_list.tasks.each do |task| %>
+			<li>
+				<h3><%= task.title %></h3>
+				<p><%= task.body %></p>
+			</li>
+		<% end -%>
+	</ul>
+</li>

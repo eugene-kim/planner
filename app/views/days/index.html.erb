@@ -1,0 +1,19 @@
+<h1>Tasks</h1>
+
+<ul>
+	<% @date_range.each do |daily_list| %>
+
+		<% if future?(daily_list.date) %>
+			<%= render "display_tasks", date_tense: "future",  daily_list: daily_list %>
+
+		<% elsif present?(daily_list.date) %>
+			<%= render "display_tasks", date_tense: "present", daily_list: daily_list %>
+
+		<% elsif past?(daily_list.date) %>
+			<%= render "display_tasks", date_tense: "past",    daily_list: daily_list %>
+
+		<% else %>
+			<p>Unacceptable date format...?</p>
+		<% end -%>
+	<% end -%>
+</ul>
