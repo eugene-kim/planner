@@ -1,4 +1,6 @@
-<h2 id="list_<%= daily_list.id %>"><%= format_date(daily_list.date) %></h2>
+<h2 id="daily_list_<%= daily_list.id %>">
+	<%= format_date(daily_list.date) %>
+</h2>
 <ul>
 	<% daily_list.tasks.each do |task| %>
 		<li>

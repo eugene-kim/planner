@@ -1,8 +1,8 @@
 class DaysController < ApplicationController
 
 	def index
-		@today = Day.find_by_date(Date.today)
-		@past_dates, @future_dates = date_range(@today)
+		today = Day.find_by_date(Date.today)
+		@date_range = date_range(today)
 	end
 
 	def show
@@ -32,6 +32,6 @@ class DaysController < ApplicationController
 				past_dates.unshift Day.find_by_date(today.date.advance days: -day)
 			end
 
-			[past_dates.reverse, future_dates.reverse]
+			[future_dates.reverse, today, past_dates.reverse].flatten
 		end
 end

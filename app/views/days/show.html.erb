@@ -1,4 +1,4 @@
-<h2 id="list_<%= @daily_list.id %>"><%= format_date(@daily_list.date) %></h2>
+<h2 class="<%= time_tense(@daily_list.date) %>" id="list_<%= @daily_list.id %>"><%= format_date(@daily_list.date) %></h2>
 <ul>
 	<% @daily_list.tasks.each do |task| %>
 		<li>
@@ -9,4 +9,4 @@
 </ul>
 
 <%= link_to "Edit", edit_day_path(@daily_list) %> |
-<%= link_to "Back", days_path(anchor: "list_#{@daily_list.id}") %>
+<%= link_to "Back", days_path(anchor: "daily_list_#{@daily_list.id}") %>

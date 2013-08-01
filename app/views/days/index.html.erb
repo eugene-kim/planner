@@ -1,18 +1,8 @@
 <h1>Tasks</h1>
 
 <ul>
-	<% @future_dates.each do |daily_list| %>
-		<li class="future">
-			<%= render "display_tasks", daily_list: daily_list %>
-		</li>
-	<% end -%>
-	
-	<li class="present">
-		<%= render "display_tasks", daily_list: @today %>
-	</li>
-
-	<% @past_dates.each do |daily_list| %>
-		<li class="past">
+	<% @date_range.each do |daily_list| %>
+		<li class="<%= time_tense(daily_list.date) %>">
 			<%= render "display_tasks", daily_list: daily_list %>
 		</li>
 	<% end -%>

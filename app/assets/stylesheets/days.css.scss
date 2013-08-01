@@ -8,13 +8,15 @@ ul {
 	list-style-type: none;
 	li {
 		margin: 10px 0px 10px 0px
-	}
-	li.future {
-		color: green;
-	}
-	li.past {
-		color: grey;
-	}
+	}	
+}
+
+.future {
+	color: green;
+}
+
+.past {
+	color: grey;
 }
 
 form > fieldset {
