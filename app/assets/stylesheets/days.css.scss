@@ -9,10 +9,23 @@ ul {
 	li {
 		margin: 10px 0px 10px 0px
 	}
-	li#future {
+	li.future {
 		color: green;
 	}
-	li#past {
+	li.past {
 		color: grey;
 	}
+}
+
+form > fieldset {
+  border: none;
+  border: solid 1px #CCC;
+  padding: 10px 15px;
+  margin: 15px 0;
+  fieldset {
+    border: none;
+    margin: 0;
+    margin: 10px 0;
+    padding: 0;
+  }
 }

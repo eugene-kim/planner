@@ -1,7 +1,25 @@
 class DaysController < ApplicationController
+
 	def index
-		today = Day.find_by_date(Date.today)
-		@date_range = date_range(today)
+		@today = Day.find_by_date(Date.today)
+		@past_dates, @future_dates = date_range(@today)
+	end
+
+	def show
+		@daily_list = Day.find(params[:id])
+	end
+
+	def edit
+		@daily_list = Day.find(params[:id])
+	end
+
+	def update
+		@daily_list = Day.find(params[:id])
+		if @daily_list.update_attributes(params[:day])
+			redirect_to day_path(@daily_list)
+		else
+			redirect_to edit_day_path(@daily_list)
+		end
 	end
 
 	private
@@ -14,6 +32,6 @@ class DaysController < ApplicationController
 				past_dates.unshift Day.find_by_date(today.date.advance days: -day)
 			end
 
-			[past_dates, today, future_dates].flatten.reverse
+			[past_dates.reverse, future_dates.reverse]
 		end
 end

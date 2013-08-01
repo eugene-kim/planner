@@ -1,0 +1,21 @@
+<%= form_for @daily_list do |f| %>
+	<% if @daily_list.errors.any? %>
+	  <div class="error_messages">
+	    <h2><%= pluralize(@daily_list.errors.count, "error") %> prohibited this task from being saved:</h2>
+	    <ul>
+		    <% @daily_list.errors.full_messages.each do |msg| %>
+		      <li><%= msg %></li>
+		    <% end %>
+	    </ul>
+	  </div>
+	<% end %>
+
+	<%= f.fields_for :tasks do |builder| %>
+		<%= render "task_fields", f: builder %>
+	<% end -%>
+
+	<%= link_to_add_fields "Add Task", f, :tasks %>
+	<div class="actions">
+		<p><%= f.submit "Update" %></p>
+	</div>
+<% end -%>

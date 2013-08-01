@@ -1,8 +1,6 @@
 Planner::Application.routes.draw do
 
-  resources :days do
-    resources :tasks
-  end
+  resources :days
   
   root to: 'days#index'
   
