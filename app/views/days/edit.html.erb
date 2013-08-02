@@ -1,2 +1,2 @@
-<h2><%= format_date(@daily_list.date) %></h2>
+<h2 class="<%= time_tense(@daily_list.date) %>" id="list_<%= @daily_list.id %>"><%= format_date(@daily_list.date) %></h2>
 <%= render "form", daily_list: @daily_list %>

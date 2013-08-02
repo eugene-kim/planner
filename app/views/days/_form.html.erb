@@ -10,12 +10,11 @@
 	  </div>
 	<% end %>
 
-	<%= f.fields_for :tasks do |builder| %>
-		<%= render "task_fields", f: builder %>
-	<% end -%>
+	<%= f.text_area :tasks, id: @daily_list.id, class: "tinymce" %>
 
-	<%= link_to_add_fields "Add Task", f, :tasks %>
 	<div class="actions">
 		<p><%= f.submit "Update" %></p>
 	</div>
 <% end -%>
+
+<%= tinymce %>

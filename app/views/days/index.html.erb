@@ -1,6 +1,6 @@
 <h1>Tasks</h1>
 
-<ul>
+<ul class="tasks">
 	<% @date_range.each do |daily_list| %>
 		<li class="<%= time_tense(daily_list.date) %>">
 			<%= render "display_tasks", daily_list: daily_list %>

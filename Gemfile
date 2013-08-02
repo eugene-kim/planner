@@ -20,6 +20,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'tinymce-rails'
 
 group :test, :development do
 	gem 'rspec-rails'

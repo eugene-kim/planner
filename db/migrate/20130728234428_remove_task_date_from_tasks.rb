@@ -1,5 +1,9 @@
 class RemoveTaskDateFromTasks < ActiveRecord::Migration
-  def change
-  	remove_column :tasks, :task_date
+  def up
+  	remove_column :tasks, :task_date  	
+  end
+
+  def down
+  	add_column :tasks, :task_date, :date
   end
 end
