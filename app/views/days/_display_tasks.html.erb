@@ -1,16 +1,13 @@
-<div id="day.id">
-	<h2 id='daily_list_<%= day.id %>'>
-		<%= format_date(day.date) %>
-	</h2>
+<h2 id='<%= day.id %>'>
+	<%= format_date(day.date) %>
+</h2>
 
-	<% if day.tasks.blank? %>
-		<p>No tasks specified</p>
-	<% else %>
-		<%= raw day.tasks %>
-	<% end %>
+<% if day.tasks.blank? %>
+	<p id="day_<%=day.id%>_tasks">No tasks specified</p>
+<% else %>
+	<p id="day_<%=day.id%>_tasks"><%= day.tasks %></p>
+<% end %>
 
-	<%= link_to "Edit", edit_day_path(day), id: "#{day.id}", remote: true %>
+<%= link_to "Edit", edit_day_path(day), id: "edit_#{day.id}", remote: true %>
 
-	<%= tinymce %>
-</div>
-
+<%= tinymce %>

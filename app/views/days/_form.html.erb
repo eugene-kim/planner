@@ -1,20 +1,21 @@
-<%= form_for @day do |f| %>
-	<% if @day.errors.any? %>
-	  <div class="error_messages">
-	    <h2><%= pluralize(@day.errors.count, "error") %> prohibited this task from being saved:</h2>
-	    <ul>
-		    <% @day.errors.full_messages.each do |msg| %>
-		      <li><%= msg %></li>
-		    <% end %>
-	    </ul>
-	  </div>
-	<% end %>
+<div>
+	<%= form_for @day, id: "day_#{@day.id}_form", remote: true do |f| %>
+		<% if @day.errors.any? %>
+		  <div class="error_messages">
+		    <h2><%= pluralize(@day.errors.count, "error") %> prohibited this task from being saved:</h2>
+		    <ul>
+			    <% @day.errors.full_messages.each do |msg| %>
+			      <li><%= msg %></li>
+			    <% end %>
+		    </ul>
+		  </div>
+		<% end %>
 
-	<%= f.text_area :tasks, id: @day.id, class: "tinymce" %>
+		<%= f.text_area :tasks, id: "day_#{@day.id}_text_area" %>
 
-	<div class="actions">
-		<p><%= f.submit "Update" %></p>
-	</div>
-<% end -%>
-
-<%= tinymce %>
+		<div class="actions">
+			<p><%= f.submit "Update", id: "day_#{@day.id}_button" %></p>
+		</div>
+	<% end -%>
+</div>
+<!-- <%= tinymce %> -->

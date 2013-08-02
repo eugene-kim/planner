@@ -1,6 +1,6 @@
 <h2 class="<%= time_tense(@day.date) %>" id="list_<%= @day.id %>"><%= format_date(@day.date) %></h2>
-
-<%= raw @day.tasks %>
+	<p><%= @day.tasks %></p>
+<!-- <%= raw @day.tasks %> -->
 
 <%= link_to "Edit", edit_day_path(@day) %> |
 <%= link_to "Back", days_path(anchor: "daily_list_#{@day.id}") %>

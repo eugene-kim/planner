@@ -16,7 +16,10 @@ class DaysController < ApplicationController
 	def update
 		@day = Day.find(params[:id])
 		if @day.update_attributes(params[:day])
-			redirect_to day_path(@day)
+			respond_to do |format|
+				format.html { redirect_to tasks_url }
+				format.js
+			end
 		else
 			redirect_to edit_day_path(@day)
 		end

@@ -1,3 +1,4 @@
-// $("#edit_daily_list_<%= @day.id %>").hide().after('<%= j render(partial: "form") %>');
+$("#edit_<%= @day.id %>").hide().after('<%= j render(partial: "form") %>');
+$("#day_<%= @day.id %>_tasks").hide()
 
-jQuery("div#static-id").html("<%=escape_javascript(render 'form')%>");
+// jQuery("div#static-id").html("<%=escape_javascript(render 'form')%>");
