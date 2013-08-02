@@ -1,16 +1,16 @@
-<%= form_for @daily_list do |f| %>
-	<% if @daily_list.errors.any? %>
+<%= form_for @day do |f| %>
+	<% if @day.errors.any? %>
 	  <div class="error_messages">
-	    <h2><%= pluralize(@daily_list.errors.count, "error") %> prohibited this task from being saved:</h2>
+	    <h2><%= pluralize(@day.errors.count, "error") %> prohibited this task from being saved:</h2>
 	    <ul>
-		    <% @daily_list.errors.full_messages.each do |msg| %>
+		    <% @day.errors.full_messages.each do |msg| %>
 		      <li><%= msg %></li>
 		    <% end %>
 	    </ul>
 	  </div>
 	<% end %>
 
-	<%= f.text_area :tasks, id: @daily_list.id, class: "tinymce" %>
+	<%= f.text_area :tasks, id: @day.id, class: "tinymce" %>
 
 	<div class="actions">
 		<p><%= f.submit "Update" %></p>

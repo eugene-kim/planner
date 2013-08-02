@@ -6,19 +6,19 @@ class DaysController < ApplicationController
 	end
 
 	def show
-		@daily_list = Day.find(params[:id])
+		@day = Day.find(params[:id])
 	end
 
 	def edit
-		@daily_list = Day.find(params[:id])
+		@day = Day.find(params[:id])
 	end
 
 	def update
-		@daily_list = Day.find(params[:id])
-		if @daily_list.update_attributes(params[:day])
-			redirect_to day_path(@daily_list)
+		@day = Day.find(params[:id])
+		if @day.update_attributes(params[:day])
+			redirect_to day_path(@day)
 		else
-			redirect_to edit_day_path(@daily_list)
+			redirect_to edit_day_path(@day)
 		end
 	end
 
