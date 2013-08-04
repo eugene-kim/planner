@@ -1,4 +1,4 @@
-$('#day_<%= @day.id %> p').replaceWith("<%= j render "small_day" %>");
+$('#day_<%= @day.id %>_tasks').replaceWith("<%= j render "small_day" %>");
 $('#day_<%= @day.id %>_form, #day_<%= @day.id %>_text_area, #day_<%= @day.id %>_button').hide();
 $('#edit_<%= @day.id %>').show(); // show edit link
 
