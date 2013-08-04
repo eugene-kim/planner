@@ -20,13 +20,15 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'tinymce-rails'
 
 group :test, :development do
 	gem 'rspec-rails'
 	gem 'capybara'
 	gem 'spork', '~> 1.0rc'
 	gem 'launchy', '~> 2.3.0'
+	# gem 'better_errors'
+	# gem 'binding_of_caller'
+	gem  'debugger'
 end
 
 # To use ActiveModel has_secure_password

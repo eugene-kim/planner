@@ -1,0 +1,5 @@
+<% if @day.tasks.blank? %>
+	<p id="day_<%=@day.id%>_tasks">No tasks specified</p>
+<% else %>
+	<p id="day_<%=@day.id%>_tasks"><%= @day.tasks %></p>
+<% end %>

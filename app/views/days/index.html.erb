@@ -1,11 +1,5 @@
 <h1>Tasks</h1>
 
 <ul class="tasks">
-	<% @date_range.each do |day| %>
-		<li class="<%= time_tense(day.date) %>">
-			<%= render "display_tasks", day: day %>
-		</li>
-	<% end -%>
+	<%= render partial: "day", :collection => @days, as: :day %>
 </ul>
-
-<!-- <div id="static-id"></div> -->

@@ -2,7 +2,7 @@ class DaysController < ApplicationController
 
 	def index
 		today = Day.find_by_date(Date.today)
-		@date_range = date_range(today)
+		@days = date_range(today)
 	end
 
 	def show
@@ -16,12 +16,14 @@ class DaysController < ApplicationController
 	def update
 		@day = Day.find(params[:id])
 		if @day.update_attributes(params[:day])
+			# @day.tasks = @day.tasks.split("\r\n").map { |x| "<p>#{x.strip}</p>" }.join
+			# debugger
 			respond_to do |format|
 				format.html { redirect_to tasks_url }
 				format.js
 			end
 		else
-			redirect_to edit_day_path(@day)
+			render :index, notice: "more than 1 line"
 		end
 	end
 

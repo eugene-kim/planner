@@ -1,3 +1,10 @@
+$('#day_<%= @day.id %> p').replaceWith("<%= j render "small_day" %>");
 $('#day_<%= @day.id %>_form, #day_<%= @day.id %>_text_area, #day_<%= @day.id %>_button').hide();
-$('#edit_<%= @day.id %>').show();
-$('#day_<%= @day.id %>_tasks').replaceWith("<p><%= @day.tasks %></p>");
+$('#edit_<%= @day.id %>').show(); // show edit link
+
+jQuery.fn.cleanWhitespace = function() {
+    textNodes = this.contents().filter(
+        function() { return (this.nodeType == 3 && !/\S/.test(this.nodeValue)); })
+        .remove();
+    return this;
+}
